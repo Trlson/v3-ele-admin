@@ -54,8 +54,14 @@
         <el-table-column label="审批通过日期" prop="审批通过时间" />
         <el-table-column label="合同编号" prop="合同编号" />
         <el-table-column label="合同名称" prop="合同名称" />
+        <el-table-column label="采购/销售类型" prop="购销类型" />
         <el-table-column label="合同类型" prop="合同类型" />
-        <el-table-column label="合同金额(含税)(万元)" prop="含税金额" />
+        <el-table-column label="业务类型" prop="业务类型" />
+        <el-table-column label="合同金额(含税)(万元)" prop="含税金额">
+          <template #default="{ row }">
+            {{ row.内容?.合同总额 || "-" }}
+          </template>
+        </el-table-column>
         <el-table-column label="相对方" prop="相对方名称" />
         <el-table-column label="我方" prop="我方名称" />
       </el-table>
